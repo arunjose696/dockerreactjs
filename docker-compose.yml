@@ -1,0 +1,13 @@
+version: "3"
+services:
+        dockerproductionapp:
+                build:
+                        context: .
+                        dockerfile: dockerfile.dev
+                ports:
+                        - "8892:3000"
+                volumes:
+                        - .:/app
+                        - /app/node_modules
+
+     
