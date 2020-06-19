@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
 class App extends Component {
   render() {
     return (
@@ -23,7 +24,11 @@ class App extends Component {
           <h2>just testing a third header</h2>
 
         </div>
+	<div className="App-header1">
+          <img src="https://homepages.cae.wisc.edu/~ece533/images/airplane.png" className="App-logo" alt="logo" />
+          <h2></h2>
 
+        </div>
 	    
         <p className="App-intro">
           To get jiji started, edit <code>src/App.js</code> and save to reload.
