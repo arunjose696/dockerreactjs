@@ -8,6 +8,7 @@ before_install:
 
 script:
     - docker run -e CI=true arun696/reactdocker  npm run test
+    - echo "hello"
 deploy:
   provider: elasticbeanstalk
   access_key_id:$accesskey_id   
