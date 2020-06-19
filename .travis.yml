@@ -1,23 +1,19 @@
+before_install: 
+  - "docker build -t arun696/reactdocker -f dockerfile.dev ."
+deploy: 
+  access_key_id: $accesskey_id
+  app: dockerReact
+  bucket_name: elasticbeanstalk-us-east-1-112943594119
+  bucket_path: dockerReact
+  env: Dockerreact-env
+  provider: elasticbeanstalk
+  region: us-east-1
+  secret_access_key: $acesskey_secret
+  true: 
+    branch: master
+script: 
+  - "docker run -e CI=true  arun696/reactdocker npm run test"
+services: 
+  - docker
 sudo: required
 
-services:
-    - docker
-
-before_install:
-    - docker build -t arun696/reactdocker -f dockerfile.dev .
-
-script:
-    - docker run -e CI=true arun696/reactdocker  npm run test
-    - echo "hello"
-deploy:
-  provider: elasticbeanstalk
-  access_key_id:$accesskey_id   
-  secret_access_key:$acesskey_secret
-  region: "us-east-1"
-  app: "dockerReact"
-  env: "Dockerreact-env"
-  bucket_name: "elasticbeanstalk-us-east-1-112943594119"
-  bucket_path: "dockerReact"
-  on:
-    branch: master
-    
