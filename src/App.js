@@ -18,6 +18,11 @@ class App extends Component {
           <h2>just testing a second header</h2>
 
         </div>
+	<div className="App-header1">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h2>just testing a third header</h2>
+
+        </div>
 
 	    
         <p className="App-intro">
